@@ -1,4 +1,4 @@
-<template src="./templates/course-list.html"></template>
+<template src="./templates/add-page.html"></template>
 <style>
   @import './assets/styles/basic.css';
 </style>
