@@ -1,29 +1,15 @@
-<template>
-  <HelloWorld msg="Welcome to Your New App"/>
-</template>
-
+<template src="./course-list.html"></template>
 <style>
   @import './assets/styles/basic.css';
 </style>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
   components: {
     HelloWorld
   }
 }
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</script>
