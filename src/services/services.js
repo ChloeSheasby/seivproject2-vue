@@ -1,50 +1,83 @@
+import axios from "axios";
 
-    var start = 0;
-    var page = 5;
-    createTable(start);
-    
-    function getPrevious() {
-        start = start - page;
-        if(start < 1)
-            start = 0;
-        createTable(start);
+var baseurl = "";
+if (process.env.NODE_ENV === "development") {
+  baseurl = "http://localhost/api/";
+} else {
+  baseurl = "/api/";
+}
+
+const apiClient = axios.create({
+  baseURL: baseurl,
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    "X-Requested-With": "XMLHttpRequest",
+    "Access-Control-Allow-Origin": "*",
+    crossDomain: true
+  }/*,
+  transformRequest: (data, headers) => {
+    let token = localStorage.getItem("token");
+    let authHeader = "";
+    if (token != null && token != "") authHeader = "Bearer " + token;
+    headers.common["Authorization"] = authHeader;
+    return JSON.stringify(data);
+  }*/,
+  transformResponse: function(data) {
+    data = JSON.parse(data);
+    if (!data.success && data.code == "expired-session") {
+      localStorage.deleteItem("token");
     }
-    
-    function getNext() {
-        if(document.getElementById('course-list-table') && document.getElementById('course-list-table').rows.length - 1 === page)
-            start = start + page;
-        createTable(start);
-    }
-    function selectChange() {
-        var id = getId();
-        document.getElementById('selectedID').innerHTML = id;
-        document.getElementById('updateID').value = id;
-        document.getElementById('deleteID').value = id;
-    }
-    
-    function getId() {
-        var courses = document.getElementsByName('selectedRow');
-        var i = courses.length;
-        while(i--) {
-            if(courses[i].checked)
-                return courses[i].value;
-        }
-    }
-    
-    function createTable(start) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if(this.readyState === 4 && this.status === 200) {
-                var myObj = JSON.parse(this.responseText);
-                var tableHTML = '<tr><th></th><th width= "50px">ID</th><th width= "100px">Name</th><th width= "100px">Department</th></tr>';
-                for(var i = 0; i < myObj.length; i++) {
-                    var student = myObj[i];
-                    tableHTML += '<tr><td><input type="radio" onchange= "selectChange()" name="selectedRow" value=' + course.id + '><td>' + course.idNumber + '</td><td>' + course.name + '</td><td>' + course.dept + '</td></tr>';
-                }
-                tableHTML += '</table>';
-                document.getElementById('course-list-table').innerHTML = tableHTML;
-            }
-        };
-        xhttp.open('GET', '/api/courses?page=' + start + '&per_page=' + page, true);
-        xhttp.send();
-    }
+    return data;
+  }
+});
+
+export default {
+  getCourses(start, length) {
+    return apiClient.get(`courses?start=${start}&length=${length}`);
+  },
+  getCourse(id) {
+    return apiClient.get("courses/" + id);
+  },
+  addCourse(course) {
+    return apiClient.post("courses", course);
+  },
+  updateCourse(courseId, course) {
+    return apiClient.put("courses/" + courseId, course);
+  },
+  deleteCourse(courseId) {
+    return apiClient.delete("courses/" + courseId);
+  }
+  /*getCourseItems(listId) {
+    return apiClient.get("lists/" + listId + "/items");
+  },
+  addListItem(listId, item) {
+    return apiClient.post("lists/" + listId + "/items", item);
+  },
+  updateListItem(listId, itemId, item) {
+    return apiClient.put("lists/" + listId + "/items/" + itemId, item);
+  },
+  deleteListItem(listId, itemId) {
+    return apiClient.delete("lists/" + listId + "/items/" + itemId);
+  },
+  getUser() {
+    return apiClient.get("users");
+  },
+  addUser(user) {
+    return apiClient.post("users", user);
+  },
+  loginUser(user) {
+    return apiClient.post("users/login", user, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+        crossDomain: true,
+        Authorization: "Basic " + btoa(user.username + ":" + user.password)
+      }
+    });
+  },
+  logoutUser() {
+    return apiClient.post("users/logout");
+  }*/
+};
