@@ -5,6 +5,11 @@
     <title>Course List</title>
 </head>
 <body>
+    <div>
+        <!--<UserDisplay></UserDisplay>-->
+        <h1>Course List with Vue</h1>
+        <CourseDisplay v-for="course in courses" :key="course.id" :course="course"/>
+    </div>
 
 <h2>Course List</h2>
 <div class="block-center">
