@@ -1,24 +1,25 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Home from "@/App.vue";
-import Add from "@/views/AddPage.vue";
+import List from "@/views/CourseList.vue";
+import Add from "@/views/CourseAdd.vue";
+import Edit from "@/views/CourseEdit.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "List",
+    component: List
   },
   {
     path: "/add",
     name: "Add",
-    component: Add,
-  }/*,
+    component: Add
+  },
   {
     path: '/edit/:id',
     name: 'edit',
     component: Edit,
     props: true
-  },
+  }/*,
   {
     path: '/delete/:id',
     name: 'delete',
@@ -28,7 +29,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
