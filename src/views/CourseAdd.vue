@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--<UserDisplay></UserDisplay>-->
-    <h3>Add Course</h3>
+    <h3>Add Course </h3>
   </div>
 </template>
 <style>

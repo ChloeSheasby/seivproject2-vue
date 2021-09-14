@@ -2,7 +2,7 @@
     <div>
         <span>{{ course.courseNum }} {{ course.name }} (</span>
         <router-link :to="{ name: 'edit', params: { id: course.courseID } }">
-            <span>edit</span>
+            <span>edit </span>
         </router-link>
         <!-- <span>|</span>
         <router-link :to="{ name: 'delete', params: { id: course.courseID } }">

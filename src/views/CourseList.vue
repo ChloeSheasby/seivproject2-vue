@@ -2,7 +2,7 @@
   <div>
     <br>
     <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
-    <button name="next" v-on:click.prevent="getNext()">Next</button>
+    <button name="next" v-on:click.prevent="getNext()">Next </button>
     <br>
     <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course"/>
   </div>
