@@ -1,11 +1,11 @@
 <template>
   <div>
     <!--<UserDisplay></UserDisplay>-->
-    <h1>Add Course with Vue</h1>
+    <h3>Add Course </h3>
   </div>
 </template>
 <style>
-  @import '@/assets/styles/basic.css';
+  /* @import '@/assets/styles/basic.css'; */
 </style>
 
 <script>
@@ -16,5 +16,4 @@ export default {
     HelloWorld
   }
 }*/
-
 </script>
