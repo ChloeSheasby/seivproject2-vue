@@ -15,8 +15,8 @@ const routes = [
     component: Add
   },
   {
-    path: '/edit/:id',
-    name: 'edit',
+    path: "/edit/:id",
+    name: "edit",
     component: Edit,
     props: true
   }/*,
