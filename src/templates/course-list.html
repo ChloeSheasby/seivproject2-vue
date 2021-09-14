@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course List</title>
+</head>
+<body>
+    <div>
+        <!--<UserDisplay></UserDisplay>-->
+        <h1>Course List with Vue</h1>
+        <CourseDisplay v-for="course in courses" :key="course.id" :course="course"/>
+    </div>
+
+<h2>Course List</h2>
+<div class="block-center">
+    <div id="student-table">
+        <table class="center" id="course-list-table">
+        </table>
+    </div>
+    <br><br>
+    <button id="previous" onclick="getPrevious()" class="inline">Previous</button>
+    <button id="next" onclick="getNext()" class="inline">Next</button>
+    <br><br>
+
+    <br><br>
+    <p id="selectedID"></p>
+    <form class="inline" action="course-update.html" method="get">
+        <input id="updateID" type="hidden" name="id" value="">
+        <input type="submit" value="Update">
+    </form>
+
+    <form class="inline" action="course-add.html" method="get">
+        <button type="submit">Add</button>
+    </form>
+    <form class="inline" action="course-delete.html" method="get">
+        <input id="deleteID" type="hidden" name="id" value="">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>
