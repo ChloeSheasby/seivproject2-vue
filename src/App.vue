@@ -3,6 +3,7 @@
   <div>
     <!--<UserDisplay></UserDisplay>-->
     <h1>Course List with Vue</h1>
+    <router-link to="/add">Add</router-link>
     <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
     <button name="next" v-on:click.prevent="getNext()">Next</button>
     <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course"/>
