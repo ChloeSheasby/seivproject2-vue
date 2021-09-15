@@ -2,10 +2,12 @@
 <template>
   <div>
     <!--<UserDisplay></UserDisplay>-->
-    <router-link :to="{ name: 'Search'}">Search </router-link> | 
-    <router-link :to="{ name: 'List'}">List </router-link> | 
-    <router-link :to="{ name: 'Add'}">Add </router-link>
-    <router-view />
+    <div class="navbar">
+      <router-link :to="{ name: 'List'}">List </router-link> | 
+      <router-link :to="{ name: 'Search'}">Search </router-link> | 
+      <router-link :to="{ name: 'Add'}">Add </router-link>
+      <router-view />
+    </div>
   </div>
 </template>
 
