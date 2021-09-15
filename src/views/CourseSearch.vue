@@ -25,17 +25,15 @@
     data() {
       return {
         search: '',
-        courses: [],
-        start: 1,
-        length: 100
+        courses: []
       }
     },
     created() {
-      this.getCourses(this.start, this.length);
+      this.getAllCourses();
     },
     methods: {
-      getCourses(start, length) {
-        CourseServices.getCourses(start, length)
+      getAllCourses() {
+        CourseServices.getAllCourses()
         .then(response => {
           this.courses = response.data;
         })
@@ -48,7 +46,7 @@
         if(confirmed) {
           CourseServices.deleteCourse(id)
           .then(() => {
-            this.getCourses(this.start, this.length);
+            this.getAllCourses();
           })
           .catch(error => {
             console.log("There was an error:", error.response)

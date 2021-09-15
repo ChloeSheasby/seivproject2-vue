@@ -33,6 +33,9 @@ const apiClient = axios.create({
 });
 
 export default {
+  getAllCourses() {
+    return apiClient.get("courses");
+  },
   getCourses(start, length) {
     return apiClient.get(`courses?start=${start}&length=${length}`);
   },
