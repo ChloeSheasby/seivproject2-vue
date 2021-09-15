@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import List from "@/views/CourseList.vue";
+import Search from "@/views/CourseSearch.vue";
 import Add from "@/views/CourseAdd.vue";
 import Edit from "@/views/CourseEdit.vue";
 
@@ -8,6 +9,11 @@ const routes = [
     path: "/",
     name: "List",
     component: List
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search
   },
   {
     path: "/add",
