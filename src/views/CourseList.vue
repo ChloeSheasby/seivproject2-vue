@@ -1,6 +1,6 @@
 <template>
   <div>
-    <br>
+    <h3>Course List</h3>
     <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
     <button name="next" v-on:click.prevent="getNext()">Next </button>
     <br>

@@ -33,19 +33,10 @@
 </style>
 
 <script>
-/*import HelloWorld from './components/HelloWorld.vue'
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}*/
-
 import CourseServices from "@/services/services.js";
 
 export default {
   props: ['id'],
-  
 
   data() {
     return {
@@ -68,14 +59,14 @@ export default {
     updateCourse() {
       CourseServices.updateCourse(this.id, this.course)
         .then (() => {
-          this.$router.push({ name: "List"});
+          this.$router.go(-1)
         })
         .catch(error => {
           console.log(error);
         });
     },
     cancel() {
-      this.$router.push({ name: 'List' })
+      this.$router.go(-1)
     }
   }
 }
