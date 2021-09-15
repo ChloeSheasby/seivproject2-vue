@@ -4,7 +4,7 @@
     <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
     <button name="next" v-on:click.prevent="getNext()">Next </button>
     <br>
-    <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course"/>
+    <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
   </div>
 </template>
 
@@ -40,6 +40,18 @@
         .catch(error => {
           console.log("There was an error:", error.response)
         });
+      },
+      deleteCourse(id, courseName) {
+        let confirmed = confirm(`Are you sure you want to delete ${courseName}`);
+        if(confirmed) {
+          CourseServices.deleteCourse(id)
+          .then(() => {
+            this.getCourses(this.start, this.length);
+          })
+          .catch(error => {
+            console.log("There was an error:", error.response)
+          });
+        }
       },
       getPrevious() {
         if(this.start >= this.length) {
