@@ -1,6 +1,7 @@
 <template>
   <div>
     <input 
+        class="text-input"
         type="text" 
         v-model="search" 
         placeholder="Search by department..."/>
