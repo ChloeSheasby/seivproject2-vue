@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import List from "@/views/CourseList.vue";
 import Add from "@/views/CourseAdd.vue";
 import Edit from "@/views/CourseEdit.vue";
+import Course from "@/views/CourseView.vue";
 
 const routes = [
   {
@@ -19,13 +20,13 @@ const routes = [
     name: "edit",
     component: Edit,
     props: true
-  }/*,
+  },
   {
-    path: '/delete/:id',
-    name: 'delete',
-    component: Delete,
+    path: '/course/:id',
+    name: 'Course',
+    component: Course,
     props: true
-  }*/
+  }
 ];
 
 const router = createRouter({

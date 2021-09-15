@@ -1,6 +1,8 @@
 <template>
     <div>
-        <span>{{ course.courseNum }} {{ course.name }} (</span>
+        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
+            <span>{{ course.courseNum }} {{ course.name }} (</span>
+        </router-link>
         <router-link :to="{ name: 'edit', params: { id: course.courseID } }">
             <span>edit </span>
         </router-link>
@@ -8,7 +10,6 @@
         <a href = "#" @click="deleteCourse(course.courseID, course.name)">
             <span> delete</span>
         </a>
-        <!-- <button name="delete" v-on:click.prevent="deleteCourse(course.courseID)">delete </button> -->
         <span>)</span>
     </div>
 </template>

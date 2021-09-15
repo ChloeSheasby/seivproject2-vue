@@ -33,14 +33,6 @@
 </style>
 
 <script>
-/*import HelloWorld from './components/HelloWorld.vue'
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}*/
-
 import CourseServices from "@/services/services.js"
 export default {
   data() {
