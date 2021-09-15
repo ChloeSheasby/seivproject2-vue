@@ -1,0 +1,21 @@
+<template>
+    <div>
+        <span>{{ course.courseNum }} {{ course.name }} (</span>
+        <router-link :to="{ name: 'edit', params: { id: course.courseID } }">
+            <span>edit </span>
+        </router-link>
+        <!-- <span>|</span>
+        <router-link :to="{ name: 'delete', params: { id: course.courseID } }">
+            <span>delete</span>
+        </router-link>
+        <span>)</span> -->
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            course: Object
+        }
+    }
+</script>
