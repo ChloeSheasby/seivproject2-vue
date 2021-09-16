@@ -6,7 +6,24 @@
         v-model="search" 
         placeholder="Search by department..."/>
     <br>
-    <CourseDisplay v-for="course in filteredCourses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+        <table width='100%'>
+          <thead>
+            <tr>
+              <th width='20%'>
+                  Course Number
+              </th>
+              <th width='20%'>
+                  Course Name
+              </th>
+              <th width='40%'></th>
+              <th width='10%'></th>
+              <th width='10%'></th>
+            </tr>
+          </thead>
+            <tbody>
+              <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+            </tbody>
+        </table>
   </div>
 </template>
 

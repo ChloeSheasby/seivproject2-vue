@@ -3,7 +3,24 @@
     <h3 class='name-tag'>Course List</h3>
     <NavBar />
     <br>
-    <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+        <table width='100%'>
+          <thead>
+            <tr>
+              <th width='20%'>
+                  Course Number
+              </th>
+              <th width='20%'>
+                  Course Name
+              </th>
+              <th width='40%'></th>
+              <th width='10%'></th>
+              <th width='10%'></th>
+            </tr>
+          </thead>
+            <tbody>
+              <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+            </tbody>
+        </table>
   </div>
 </template>
 
