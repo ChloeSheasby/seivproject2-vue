@@ -21,7 +21,7 @@
             </tr>
           </thead>
             <tbody>
-              <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+              <CourseDisplay v-for="course in filteredCourses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
             </tbody>
         </table>
   </div>
