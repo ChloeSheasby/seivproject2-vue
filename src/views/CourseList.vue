@@ -1,25 +1,26 @@
 <template>
   <div>
-    <h3>Course List</h3>
-    <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
-    <button name="next" v-on:click.prevent="getNext()">Next</button>
+    <h3 class='name-tag'>Course List</h3>
+    <NavBar />
     <br>
     <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
   </div>
 </template>
 
 <style>
-  @import '/assets/styles/basic.css';
+  @import '../assets/styles/basic.css';
 </style>
 
 <script>
   import CourseDisplay from '@/components/CourseDisplay.vue'
+  import NavBar from '@/components/NavBar.vue'
   import CourseServices from '@/services/services.js'
   //import UserDisplay from '@/components/UserDisplay.vue'
   export default {
     name: 'App',
     components: {
-      CourseDisplay
+      CourseDisplay,
+      NavBar
     },
     data() {
       return {

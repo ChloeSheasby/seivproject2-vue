@@ -20,7 +20,7 @@
 </template>
 
 <style>
-  @import '/assets/styles/basic.css';
+  @import '../assets/styles/basic.css';
 </style>
 
 <script>
