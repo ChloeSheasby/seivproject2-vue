@@ -1,18 +1,49 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
-            <span>{{ course.courseNum }} {{ course.name }} (</span>
-        </router-link>
-        <router-link :to="{ name: 'edit', params: { id: course.courseID } }">
-            <span>edit </span>
-        </router-link>
-        <span>|</span>
-        <a href = "#" @click="deleteCourse(course.courseID, course.name)">
-            <span> delete</span>
-        </a>
-        <span>)</span>
+        <table width='100%'>
+          <thead>
+            <tr>
+              <th width='20%'>
+                  Course Number
+              </th>
+              <th width='20%'>
+                  Course Name
+              </th>
+              <th width='40%'></th>
+              <th width='10%'></th>
+              <th width='10%'></th>
+            </tr>
+          </thead>
+            <tbody>
+                <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
+                <tr>
+                <td width='20%'>
+                    {{ course.courseNum }}
+                </td>
+                <td width='20%'>
+                    {{ course.name }}
+                </td>
+                <td width='40%'>
+                </td>
+                <td width='10%'>
+                    <router-link :to="{ name: 'edit', params: { id: course.courseID } }"  class='edit-btn'>
+                        <span>edit </span>
+                    </router-link>
+                </td>
+                <td width='10%'>
+                    <a  class='delete-btn' href = "#" @click="deleteCourse(course.courseID, course.name)">
+                        <span> delete</span>
+                    </a>
+                </td>
+                </tr>
+                </router-link>
+            </tbody>
+        </table>
     </div>
 </template>
+<style>
+  @import '../assets/styles/course-list.css';
+</style>
 
 <script>
     export default {

@@ -37,48 +37,52 @@
                 placeholder="Hours"
               />
               <br>
-              <input
-                class="text-input"
+              <textarea
+                class="textarea-input"
                 v-model="course.description"
                 type="textarea"
+                rows='4'
                 id="description"
-                placeholder="Description..."
-              />
+                placeholder="Description...">
+              </textarea>
       </div>
-        <table  class="text-input-group">
-          <tr>
-            <td><button name="cancel" v-on:click.prevent="cancel()">Cancel</button></td>
-            <td><input class="text-input" type="submit" name="submit" value="Save"></td>
-          </tr>
-        </table>
+      
+            <div class="text-input-group">
+              <table class='center transparent-background' width='100%'>
+                <tr>
+                  <td style='text-align: right;'><button name="cancel" v-on:click.prevent="cancel()">Cancel</button></td>
+                  <td style='text-align: left;'><input type="submit" name="submit" value="Save"></td>
+                </tr>
+              </table>
+            </div>
     </form>
   </div>
 </template>
 <style>
-  @import '../assets/styles/basic.css';
+@import "../assets/styles/basic.css";
 </style>
 
 <script>
-import CourseServices from "@/services/services.js"
+import CourseServices from "@/services/services.js";
 export default {
   data() {
     return {
       course: {},
-    }
+    };
   },
   methods: {
     addCourse() {
       CourseServices.addCourse(this.course)
         .then(() => {
-          this.$router.push({ name: 'List' })
+          this.$router.push({ name: "List" });
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
-        })
+        });
     },
     cancel() {
-      this.$router.push({ name: 'List' })
+      this.$router.push({ name: "List" });
     },
-  }
-}
+  },
+};
 </script>

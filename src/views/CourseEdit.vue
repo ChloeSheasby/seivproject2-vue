@@ -15,7 +15,7 @@
                 placeholder="Department Name"
               />
               <br>
-              <div class='input-label'>Department Name:</div>
+              <div class='input-label'>Course Number:</div>
               <input
                 class="text-input"
                 v-model="course.courseNum"
@@ -24,7 +24,7 @@
                 placeholder="Course Number"
               />
               <br>
-              <div class='input-label'>Department Name:</div>
+              <div class='input-label'>Level:</div>
               <input
                 class="text-input"
                 v-model="course.level"
@@ -33,7 +33,7 @@
                 placeholder="level"
               />
               <br>
-              <div class='input-label'>Department Name:</div>
+              <div class='input-label'>Hours:</div>
               <input
                 class="text-input"
                 v-model="course.hours"
@@ -42,14 +42,15 @@
                 placeholder="Hours"
               />
               <br>
-              <div class='input-label'>Department Name:</div>
-              <input
-                class="text-input"
+              <div class='input-label'>Description:</div>
+              <textarea
+                class="textarea-input"
                 v-model="course.description"
                 type="textarea"
+                rows='4'
                 id="description"
-                placeholder="Description..."
-              />
+                placeholder="Description...">
+              </textarea>
       </div>
       <input type="submit" name="submit" value="Save" />
       <button name="cancel" v-on:click.prevent="cancel()">Cancel</button>
