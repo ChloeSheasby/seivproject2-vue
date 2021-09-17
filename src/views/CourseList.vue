@@ -20,8 +20,8 @@
                   Course Name
               </th>
               <th width='40%'>
-                Description
-                </th>
+                  Description
+              </th>
               <th width='10%'></th>
               <th width='10%'></th>
             </tr>

@@ -6,7 +6,7 @@
                 {{ course.courseNum }}
             </td>
             <td width='20%'>
-            <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
+            <router-link :to="{ name: 'Course', params: { id: course.courseID } }"  class='edit-btn'>
                 {{ course.name }}
                 <div id="myId" ref="myId">{{ message }}</div>
             </router-link>
