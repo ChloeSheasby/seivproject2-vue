@@ -7,10 +7,11 @@
         <div class="text-input">Course Number: {{ this.course.courseNum }}</div>
         <div class="text-input">Course Level: {{ this.course.level }}</div>
         <div class="text-input">Number of Hours: {{ this.course.hours }}</div>
-        <br>
-        <div class="text-input">Description: {{ this.course.description }}</div>
+        <div class="text-input" width='150%'>Description: {{ this.course.description }}</div>
         <br>
       </div>
+      <br>
+      <br>
       <br>
       <br>
       <br>
