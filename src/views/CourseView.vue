@@ -1,6 +1,6 @@
 <template>
   <div style="">
-      <div style="margin-left: 35%; text-align: left;">
+      <div style="margin-left: 32%; text-align: left;">
       <h3>Viewing Course {{ this.course.name }}</h3>
       <br>
         <div class="text-input">Department: {{ this.course.dept }}</div>
@@ -11,6 +11,10 @@
         <div class="text-input">Description: {{ this.course.description }}</div>
         <br>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
       <button name="back" v-on:click.prevent="cancel()">Back</button>
       <span> &nbsp; </span>
       <button name="edit" v-on:click.prevent="toEdit()">Edit</button>
