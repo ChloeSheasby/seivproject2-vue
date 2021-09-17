@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <div class="text-input-group">
+  <div style="">
+      <div style="margin-left: 35%; text-align: left;">
       <h3>Viewing Course {{ this.course.name }}</h3>
       <br>
-      <div class="text-input-group">
         <div class="text-input">Department: {{ this.course.dept }}</div>
         <div class="text-input">Course Number: {{ this.course.courseNum }}</div>
         <div class="text-input">Course Level: {{ this.course.level }}</div>
@@ -18,7 +17,6 @@
       <span> &nbsp; </span>
       <button name="delete" v-on:click.prevent="deleteCourse(this.course.courseID, this.course.name)">Delete</button>
     </div>
-  </div>
 </template>
 
 <style>
