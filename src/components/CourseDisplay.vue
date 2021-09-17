@@ -1,6 +1,7 @@
 <template>
     <div>
-        <tr>
+        <table width='100%'>
+        <tr width='100%'>
             <td width='20%'>
                 {{ course.courseNum }}
             </td>
@@ -22,6 +23,7 @@
                 </a>
             </td>
         </tr>
+        </table>
     </div>
 </template>
 <style>
