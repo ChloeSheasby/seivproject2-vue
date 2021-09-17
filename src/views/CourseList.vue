@@ -19,24 +19,17 @@
               <th width='20%'>
                   Course Name
               </th>
-              <th width='40%'></th>
+              <th width='40%'>
+                Description
+                </th>
               <th width='10%'></th>
               <th width='10%'></th>
             </tr>
           </thead>
             <tbody>
-            <tr>
-              <th width='20%'>
-              </th>
-              <th width='20%'>
-              </th>
-              <th width='40%'></th>
-              <th width='10%'></th>
-              <th width='10%'></th>
-            </tr>
+              <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
             </tbody>
         </table>
-        <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
   </div>
 </template>
 

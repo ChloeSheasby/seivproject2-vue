@@ -6,7 +6,7 @@
     <form @submit.prevent="updateCourse">
 
       <div class="text-input-group">
-              <div class='input-label'>Department Name:</div>
+              <div class='input-label'>Department Name</div>
               <input
                 class="text-input"
                 v-model="course.dept"
@@ -15,7 +15,7 @@
                 placeholder="Department Name"
               />
               <br>
-              <div class='input-label'>Course Number:</div>
+              <div class='input-label'>Course Number</div>
               <input
                 class="text-input"
                 v-model="course.courseNum"
@@ -24,7 +24,7 @@
                 placeholder="Course Number"
               />
               <br>
-              <div class='input-label'>Level:</div>
+              <div class='input-label'>Level</div>
               <input
                 class="text-input"
                 v-model="course.level"
@@ -33,7 +33,7 @@
                 placeholder="level"
               />
               <br>
-              <div class='input-label'>Hours:</div>
+              <div class='input-label'>Hours</div>
               <input
                 class="text-input"
                 v-model="course.hours"
@@ -42,7 +42,7 @@
                 placeholder="Hours"
               />
               <br>
-              <div class='input-label'>Description:</div>
+              <div class='input-label'>Description</div>
               <textarea
                 class="textarea-input"
                 v-model="course.description"
