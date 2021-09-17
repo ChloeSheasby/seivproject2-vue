@@ -4,6 +4,7 @@
     <h3 class='name-tag'>Add Course</h3>
 
     <form @submit.prevent="addCourse">
+      
       <div class="text-input-group">
               <input
                 class="text-input"

@@ -7,9 +7,11 @@
             <td width='20%'>
             <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
                 {{ course.name }}
+                <div id="myId" ref="myId">{{ message }}</div>
             </router-link>
             </td>
             <td width='40%'>
+                {{ course.description }}
             </td>
             <td width='10%'>
                 <router-link :to="{ name: 'edit', params: { id: course.courseID } }"  class='edit-btn'>
