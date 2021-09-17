@@ -1,21 +1,23 @@
 <template>
   <div>
-    <h3>Viewing Course {{ this.course.name }}</h3>
-    <br>
     <div class="text-input-group">
-      <div class="text-input">Department: {{ this.course.dept }}</div>
-      <div class="text-input">Course Number: {{ this.course.courseNum }}</div>
-      <div class="text-input">Course Level: {{ this.course.level }}</div>
-      <div class="text-input">Number of Hours: {{ this.course.hours }}</div>
+      <h3>Viewing Course {{ this.course.name }}</h3>
       <br>
-      <div class="text-input">Description: {{ this.course.description }}</div>
-      <br>
+      <div class="text-input-group">
+        <div class="text-input">Department: {{ this.course.dept }}</div>
+        <div class="text-input">Course Number: {{ this.course.courseNum }}</div>
+        <div class="text-input">Course Level: {{ this.course.level }}</div>
+        <div class="text-input">Number of Hours: {{ this.course.hours }}</div>
+        <br>
+        <div class="text-input">Description: {{ this.course.description }}</div>
+        <br>
+      </div>
+      <button name="back" v-on:click.prevent="cancel()">Back</button>
+      <span> &nbsp; </span>
+      <button name="edit" v-on:click.prevent="toEdit()">Edit</button>
+      <span> &nbsp; </span>
+      <button name="delete" v-on:click.prevent="deleteCourse(this.course.courseID, this.course.name)">Delete</button>
     </div>
-    <button name="back" v-on:click.prevent="cancel()">Back</button>
-    <span> &nbsp; </span>
-    <button name="edit" v-on:click.prevent="toEdit()">Edit</button>
-    <span> &nbsp; </span>
-    <button name="delete" v-on:click.prevent="deleteCourse(this.course.courseID, this.course.name)">Delete</button>
   </div>
 </template>
 

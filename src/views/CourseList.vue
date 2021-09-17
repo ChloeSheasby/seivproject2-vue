@@ -1,7 +1,14 @@
 <template>
   <div>
-    <h3 class='name-tag'>Course List</h3>
-    <NavBar />
+    <h3 class='name-tag'>Course List</h3>    
+  <div>
+    <table class='center transparent-background' width='100%'>
+      <tr>
+        <td style='text-align: right;'><button class='arrows' name="previous" v-on:click.prevent="getPrevious()">&#60;</button></td>
+        <td style='text-align: left;'><button class='arrows' name="next" v-on:click.prevent="getNext()">&#62;</button></td>
+      </tr>
+    </table>
+  </div>
     <br>
         <table width='100%'>
           <thead>
@@ -30,14 +37,12 @@
 
 <script>
   import CourseDisplay from '@/components/CourseDisplay.vue'
-  import NavBar from '@/components/NavBar.vue'
   import CourseServices from '@/services/services.js'
   //import UserDisplay from '@/components/UserDisplay.vue'
   export default {
     name: 'App',
     components: {
-      CourseDisplay,
-      NavBar
+      CourseDisplay
     },
     data() {
       return {
