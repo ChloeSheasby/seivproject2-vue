@@ -1,26 +1,26 @@
 <template>
     <div>
         <tr>
-        <td width='20%'>
-            {{ course.courseNum }}
-        </td>
-        <td width='20%'>
-        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
-            {{ course.name }}
-        </router-link>
-        </td>
-        <td width='40%'>
-        </td>
-        <td width='10%'>
-            <router-link :to="{ name: 'edit', params: { id: course.courseID } }"  class='edit-btn'>
-                <span>edit </span>
+            <td width='20%'>
+                {{ course.courseNum }}
+            </td>
+            <td width='20%'>
+            <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
+                {{ course.name }}
             </router-link>
-        </td>
-        <td width='10%'>
-            <a  class='delete-btn' href = "#" @click="deleteCourse(course.courseID, course.name)">
-                <span> delete</span>
-            </a>
-        </td>
+            </td>
+            <td width='40%'>
+            </td>
+            <td width='10%'>
+                <router-link :to="{ name: 'edit', params: { id: course.courseID } }"  class='edit-btn'>
+                    <span>edit </span>
+                </router-link>
+            </td>
+            <td width='10%'>
+                <a  class='delete-btn' href = "#" @click="deleteCourse(course.courseID, course.name)">
+                    <span> delete</span>
+                </a>
+            </td>
         </tr>
     </div>
 </template>
