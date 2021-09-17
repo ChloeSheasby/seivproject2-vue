@@ -1,12 +1,13 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
         <tr>
         <td width='20%'>
             {{ course.courseNum }}
         </td>
         <td width='20%'>
+        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
             {{ course.name }}
+        </router-link>
         </td>
         <td width='40%'>
         </td>
@@ -21,7 +22,6 @@
             </a>
         </td>
         </tr>
-        </router-link>
     </div>
 </template>
 <style>
