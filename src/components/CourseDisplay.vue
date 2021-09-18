@@ -11,7 +11,7 @@
                 <div id="myId" ref="myId">{{ message }}</div>
             </router-link>
             </td>
-            <td width='40%'>
+            <td width='40%' @cload="onWindowLoad(course.description)">
                 {{ course.description }}
             </td>
             <td width='10%'>
@@ -40,6 +40,9 @@
         methods: {
             deleteCourse(id, courseName) {
                 this.$emit('delete-course', id, courseName);
+            },
+            onWindowLoad(courseDescription) {
+                this.appendChild(courseDescription.slice(0, 50));
             },
         }
     }
