@@ -6,14 +6,6 @@ body {
     margin: 5%;
 }
 
-.edit-btn {
-    text-decoration: none;
-}
-
-.delete-btn {
-    text-decoration: none;
-}
-
 table {
     background-color: white;
 }
@@ -21,4 +13,25 @@ table {
 
 th, td {
     padding: 1%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.edit-btn {
+    text-decoration: none;
+    text-align: center;
+}
+
+.delete-btn {
+    text-decoration: none;
+    text-align: center;
+}
+
+.course-btn {
+    text-decoration: none;
+    text-align: center;
+}
+
+.edit-and-delete {
+    text-align: center;
 }
