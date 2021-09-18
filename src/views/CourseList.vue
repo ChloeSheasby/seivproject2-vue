@@ -1,15 +1,38 @@
 <template>
   <div>
-    <h3>Course List</h3>
-    <button name="previous" v-on:click.prevent="getPrevious()">Previous</button>
-    <button name="next" v-on:click.prevent="getNext()">Next</button>
+    <h3 class='name-tag'>Course List</h3>    
+  <div>
+    <table class='center transparent-background' width='100%'>
+      <tr>
+        <td style='text-align: right;'><button class='arrows' name="previous" v-on:click.prevent="getPrevious()">&#60;</button></td>
+        <td style='text-align: left;'><button class='arrows' name="next" v-on:click.prevent="getNext()">&#62;</button></td>
+      </tr>
+    </table>
+  </div>
     <br>
-    <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
+        <table width='100%'>
+          <thead>
+            <tr>
+              <th width='20%'>
+                  Course Number
+              </th>
+              <th width='20%'>
+                  Course Name
+              </th>
+              <th width='40%'>
+                  Description
+              </th>
+              <th width='10%'></th>
+              <th width='10%'></th>
+            </tr>
+          </thead>
+        </table>
+        <CourseDisplay v-for="course in courses" :key="course.courseID" :course="course" @delete-course=deleteCourse />
   </div>
 </template>
 
 <style>
-  @import '/assets/styles/basic.css';
+  @import '../assets/styles/basic.css';
 </style>
 
 <script>

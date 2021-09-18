@@ -5,3 +5,20 @@ button {
 body {
     margin: 5%;
 }
+
+.edit-btn {
+    text-decoration: none;
+}
+
+.delete-btn {
+    text-decoration: none;
+}
+
+table {
+    background-color: white;
+}
+
+
+th, td {
+    padding: 1%;
+}

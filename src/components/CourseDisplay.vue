@@ -1,18 +1,36 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Course', params: { id: course.courseID } }">
-            <span>{{ course.courseNum }} {{ course.name }} (</span>
-        </router-link>
-        <router-link :to="{ name: 'edit', params: { id: course.courseID } }">
-            <span>edit </span>
-        </router-link>
-        <span>|</span>
-        <a href = "#" @click="deleteCourse(course.courseID, course.name)">
-            <span> delete</span>
-        </a>
-        <span>)</span>
+        <table width='100%'>
+        <tr width='100%'>
+            <td width='20%'>
+                {{ course.courseNum }}
+            </td>
+            <td width='20%'>
+            <router-link :to="{ name: 'Course', params: { id: course.courseID } }"  class='edit-btn'>
+                {{ course.name }}
+                <div id="myId" ref="myId">{{ message }}</div>
+            </router-link>
+            </td>
+            <td width='40%' @cload="onWindowLoad(course.description)">
+                {{ course.description }}
+            </td>
+            <td width='10%'>
+                <router-link :to="{ name: 'edit', params: { id: course.courseID } }"  class='edit-btn'>
+                    <span>edit </span>
+                </router-link>
+            </td>
+            <td width='10%'>
+                <a  class='delete-btn' href = "#" @click="deleteCourse(course.courseID, course.name)">
+                    <span> delete</span>
+                </a>
+            </td>
+        </tr>
+        </table>
     </div>
 </template>
+<style>
+  @import '../assets/styles/course-list.css';
+</style>
 
 <script>
     export default {
@@ -22,6 +40,9 @@
         methods: {
             deleteCourse(id, courseName) {
                 this.$emit('delete-course', id, courseName);
+            },
+            onWindowLoad(courseDescription) {
+                this.appendChild(courseDescription.slice(0, 50));
             },
         }
     }
