@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h3 class='name-tag'>Course List</h3>    
+    <div class='name-tag'>Course List</div>    
   <div>
     <table class='center transparent-background' width='100%'>
       <tr>
-        <td style='text-align: right;'><button class='arrows' name="previous" v-on:click.prevent="getPrevious()">&#60;</button></td>
-        <td style='text-align: left;'><button class='arrows' name="next" v-on:click.prevent="getNext()">&#62;</button></td>
+        <td style='padding-left: 25%; text-align: left;'><button class='arrows' name="previous" v-on:click.prevent="getPrevious()">&#60;</button></td>
+        <td style='padding-right: 25%; text-align: right;'><button class='arrows' name="next" v-on:click.prevent="getNext()">&#62;</button></td>
       </tr>
     </table>
   </div>
@@ -16,11 +16,8 @@
               <th width='20%'>
                   Course Number
               </th>
-              <th width='20%'>
-                  Course Name
-              </th>
               <th width='40%'>
-                  Description
+                  Course Name
               </th>
               <th width='10%'></th>
               <th width='10%'></th>
