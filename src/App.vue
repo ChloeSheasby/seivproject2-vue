@@ -1,26 +1,35 @@
+<!--<template src="./templates/course-list.html"></template>-->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!--<UserDisplay></UserDisplay>-->
+    <div class="navbar">
+      <ul>
+        <li>
+          <router-link :to="{ name: 'List' }" class="routerlinks"
+            >List
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'Search' }" class="routerlinks"
+            >Search
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'Add' }" class="routerlinks"
+            >Add
+          </router-link>
+        </li>
+      </ul>
+      <br />
+      <hr />
+    </div>
+    <router-view />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/styles/basic.css";
 </style>
+
+<script>
+</script>
